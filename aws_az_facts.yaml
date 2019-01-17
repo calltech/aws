@@ -2,7 +2,10 @@
 - hosts: web
   become: yes
   tasks:
-   - name: Deploy httpd
+   - name: Install httpd server
+     yum: pkg=lynx state=latest
+   - name: Querying for Telnet Install
+     yum: pkg=telnet state=present update_cache=true
 
 ---
 - hosts: web
